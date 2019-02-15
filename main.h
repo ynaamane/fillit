@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/07 16:43:11 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 14:51:14 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 
-typedef struct	e_bool
+typedef enum	e_bool
 {
 	true,
 	false
@@ -35,5 +35,7 @@ typedef struct	s_tetrimino
 	t_point		*p;
 	char		c;
 }				t_tetrimino;
+
+static t_bool		validate_count(char *tetri);
 
 #endif
