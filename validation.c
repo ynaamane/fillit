@@ -6,11 +6,15 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:34:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 21:43:41 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 22:20:17 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+
+/*
+** Count lines and columns for each tetrimino
+*/
 
 static t_bool	validate_count(char *tetri)
 {
@@ -38,6 +42,10 @@ static t_bool	validate_count(char *tetri)
 	return (true);
 }
 
+/*
+** Get tetrimino as a string from file
+*/
+
 static char		*get_21(int fd)
 {
 	char	*str;
@@ -49,6 +57,10 @@ static char		*get_21(int fd)
 		return (NULL);
 	return (str);
 }
+
+/*
+** Validate pattern by compare with library of patterns
+*/
 
 static t_bool	validate_pattern(char *tetri, char *pattern)
 {
@@ -80,6 +92,10 @@ static t_bool	validate_pattern(char *tetri, char *pattern)
 	return (true);
 }
 
+/*
+** Aggregate all validations
+*/
+
 static t_bool	validate(char *tetri)
 {
 	int		i;
@@ -104,6 +120,10 @@ static t_bool	validate(char *tetri)
 		return (false);
 	return (true);
 }
+
+/*
+** Validate if there are more than 26 pieces and validate each piece
+*/
 
 t_bool			validate_file(int fd)
 {
