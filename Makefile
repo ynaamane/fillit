@@ -70,6 +70,7 @@ LIBFT_CTYPES = libft/ft_itoa.c \
 		 libft/ft_strnstr.c \
 		 libft/ft_strrchr.c \
 		 libft/ft_strstr.c \
+		 libft/ft_charcount.c \
 		 libft/ft_tolower.c \
 		 libft/ft_toupper.c
 

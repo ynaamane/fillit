@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:34:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 18:47:27 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 21:09:14 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,19 @@ static t_bool	validate_pattern(char *tetri, char *pattern)
 	int		i;
 	int		j;
 
-	i = 0;
-	j = 0;
+	i = -1;
+	j = -1;
 	simplified = ft_strnew(17);
-	while (i++ < 20)
+	while (++i < 20)
 	{
+		if (tetri[i] != '\n' && tetri[i] != '\0'
+				&& tetri[i] != '.' && tetri[i] != '#')
+			return (false);
 		if (tetri[i] != '\n')
-			simplified[j++] = tetri[i];
+			simplified[++j] = tetri[i];
 	}
+	if (ft_charcount('#', simplified) != 4)
+		return (false);
 	tmp = ft_strstr(simplified, pattern);
 	printf("reduced: %s\n", simplified);
 	printf("tmp: %p\n", tmp);
@@ -103,7 +108,7 @@ t_bool			validate_file(int fd)
 	int		i;
 	char	*tetri;
 
-	i = -1;
+	i = 0;
 	while (i++ <= 25)
 	{
 		tetri = get_21(fd);
