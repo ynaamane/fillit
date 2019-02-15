@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:34:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 21:36:52 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 21:43:41 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ static t_bool	validate_pattern(char *tetri, char *pattern)
 	printf("tmp: %p\n", tmp);
 	if (tmp == NULL || ft_strlen(pattern) == 0 || pattern == NULL)
 		return (false);
+	free(simplified);
 	return (true);
 }
 
