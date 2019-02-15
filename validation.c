@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 17:34:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 21:09:14 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 21:36:52 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ static t_bool	validate_pattern(char *tetri, char *pattern)
 	simplified = ft_strnew(17);
 	while (++i < 20)
 	{
-		if (tetri[i] != '\n' && tetri[i] != '\0'
-				&& tetri[i] != '.' && tetri[i] != '#')
+		if ((tetri[i] != '\n' && tetri[i] != '\0' && tetri[i] != '.'
+					&& tetri[i] != '#') || (tetri[i] == '\n' &&
+					tetri[i - 1] == '#' && tetri[i + 1] == '#'))
 			return (false);
 		if (tetri[i] != '\n')
 			simplified[++j] = tetri[i];
