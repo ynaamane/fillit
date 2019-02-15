@@ -1,39 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 17:19:20 by qutrinh          ###   ########.fr       */
+/*   Created: 2019/02/15 16:28:42 by qutrinh           #+#    #+#             */
+/*   Updated: 2019/02/15 16:43:24 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-int				ft_error(char *err, int n)
-{
-	ft_putstr(err);
-	return (n);
-}
-
-int				main(int ac, char **av)
-{
-	int		fd;
-
-	if (ac != 2)
-		ft_error("usage: ./fillit target_file", 0);
-	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-	if (validate_file(fd) == true)
-		ft_putstr("Valid!");
-	else
-		ft_putstr("Not valid!");
-
-	return (1);
-}
+int		

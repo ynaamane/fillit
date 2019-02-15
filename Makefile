@@ -74,7 +74,8 @@ LIBFT_CTYPES = libft/ft_itoa.c \
 		 libft/ft_toupper.c
 
 CTYPES = main.c \
-		 validation.c
+		 validation.c \
+		 patterns.c
 
 TEST = test.c
 
@@ -91,15 +92,15 @@ $(LIBFT_NAME): $(LIBFT_BINS)
 	@echo "\033[32mLibrary libft.a created.\033[0m"
 	@ranlib $(LIBFT_NAME)
 
+$(BINS): $(LIBFT_CTYPES)
+	@gcc $(FLAGS) -I. -c $(LIBFT_CTYPES)
+	@echo "\033[32mCompiled libft .c files with flags.\033[0m"
+
 $(NAME): $(BINS)
 	@make $(LIBFT_NAME)
 	@gcc $(FLAG) -c $(CTYPES)
 	@gcc $(FLAG) -o $(NAME) $(BINS) -L. -lft
 	@echo "\033[32mCompiled all 'fillit' .c type files.\033[0m"
-
-$(BINS): $(LIBFT_CTYPES)
-	@gcc $(FLAGS) -I. -c $(LIBFT_CTYPES)
-	@echo "\033[32mCompiled libft .c files with flags.\033[0m"
 
 test:
 	@gcc $(FLAG) -c $(TEST)
@@ -115,7 +116,11 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "\033[31mMain executable file deleted.\033[0m"
+	@rm -f $(LIBFT_NAME)
 	@echo "\033[31mLibrary file deleted.\033[0m"
+	@rm -f test
+	@echo "\033[31mTest executable file deleted.\033[0m"
 
 re: fclean all
 

@@ -6,11 +6,34 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 14:21:02 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/07 14:23:06 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 18:17:18 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+
+static char	*get_pattern_part2(int index)
+{
+	if (index == 10)
+		return (ft_strdup("###...#\0"));
+	if (index == 11)
+		return (ft_strdup("#..###\0"));
+	if (index == 12)
+		return (ft_strdup("#..##...#\0"));
+	if (index == 13)
+		return (ft_strdup("#...##..#\0"));
+	if (index == 14)
+		return (ft_strdup("###..#\0"));
+	if (index == 15)
+		return (ft_strdup("##...##\0"));
+	if (index == 16)
+		return (ft_strdup("#..##..#\0"));
+	if (index == 17)
+		return (ft_strdup("##.##\0"));
+	if (index == 18)
+		return (ft_strdup("#...##...#\0"));
+	return (NULL);
+}
 
 char		*get_pattern(int index)
 {
@@ -37,29 +60,6 @@ char		*get_pattern(int index)
 	if (index == 9)
 		return (ft_strdup("##..#...#\0"));
 	return (get_pattern_part2(index));
-}
-
-static char	*get_pattern_part2(int index)
-{
-	if (index == 10)
-		return (ft_strdup("###...#\0"));
-	if (index == 11)
-		return (ft_strdup("#..###\0"));
-	if (index == 12)
-		return (ft_strdup("#..##...#\0"));
-	if (index == 13)
-		return (ft_strdup("#...##..#\0"));
-	if (index == 14)
-		return (ft_strdup("###..#\0"));
-	if (index == 15)
-		return (ft_strdup("##...##\0"));
-	if (index == 16)
-		return (ft_strdup("#..##..#\0"));
-	if (index == 17)
-		return (ft_strdup("##.##\0"));
-	if (index == 18)
-		return (ft_strdup("#...##...#\0"));
-	return (NULL);
 }
 
 
