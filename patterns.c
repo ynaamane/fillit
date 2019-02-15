@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 14:21:02 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 18:17:18 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 18:52:10 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,3 @@ char		*get_pattern(int index)
 		return (ft_strdup("##..#...#\0"));
 	return (get_pattern_part2(index));
 }
-
-

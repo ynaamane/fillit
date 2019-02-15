@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 18:12:45 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 18:53:16 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@
 # include <sys/uio.h>
 # include <stdio.h>
 
-typedef enum	e_bool
+typedef enum		e_bool
 {
 	true,
 	false
-}				t_bool;
+}					t_bool;
 
-typedef struct	s_point
+typedef struct		s_point
 {
 	int			x;
 	int			y;
 	char		c;
-}				t_point;
+}					t_point;
 
-typedef struct	s_tetrimino
+typedef struct		s_tetrimino
 {
 	t_point		*p;
 	char		c;
-}				t_tetrimino;
+}					t_tetrimino;
 
 static int			ft_error(char *err, int n);
 char				*get_pattern(int index);

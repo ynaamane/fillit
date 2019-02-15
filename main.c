@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 17:19:20 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/15 18:53:32 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int				main(int ac, char **av)
 		ft_putstr("Valid!");
 	else
 		ft_putstr("Not valid!");
-
+	close(fd);
 	return (1);
 }
