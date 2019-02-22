@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 22:28:57 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/02/22 23:34:13 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ typedef struct		s_tetrimino
 int					ft_error(char *err, int n);
 char				*get_pattern(int index);
 t_bool				validate_file(int fd);
+t_point				new_point(int a, int b);
 
 #endif
