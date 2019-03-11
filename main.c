@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 03:15:01 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 03:49:30 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int				main(int ac, char **av)
 	hole_nb = get_hole_nb(tetriminos, start_size);
 	printf("Hole number is : %d\n", hole_nb);
 	matrix = create_matrix(tetriminos, start_size, hole_nb);
+	fill_matrix(matrix, tetriminos, hole_nb);
 	print_matrix(*matrix);
 
 	return (0);

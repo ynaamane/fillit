@@ -6,11 +6,20 @@
 /*   By: qutrinh <qutrinh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 01:09:02 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 01:44:40 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 03:50:21 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+
+/*
+** Translate 2 dimension matrix coordinates to matrix' column's index
+*/
+
+int			get_column_index(int x, int y, int board_size)
+{
+	return (y * board_size + x);
+}
 
 void		print_matrix(t_matrix matrix)
 {
@@ -35,4 +44,27 @@ void		print_matrix(t_matrix matrix)
 		printf("\n");
 		row++;
 	}
+}
+
+t_point		get_position_n(t_tetrimino *t, int n, int board_size)
+{
+	t_point	p;
+	int		position_nb;
+
+	p.y = -1;
+	position_nb = 0;
+	while (++p.y < board_size)
+	{
+		p.x = -1;
+		while (++p.x < board_size)
+		{
+			if (can_be_placed(t, p, board_size) == true)
+			{
+				position_nb++;
+				if (position_nb == n)
+					return (p);
+			}
+		}
+	}
+	return (p);
 }

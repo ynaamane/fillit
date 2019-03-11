@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 02:25:37 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 03:51:09 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,11 @@ t_bool			can_be_placed(t_tetrimino *t, t_point p, int board_size);
 t_board			put_tetrimino(t_point p, t_tetrimino t, t_board board);
 int				get_tetriminos_nb(t_list *tetriminos);
 int				get_positions_nb(t_tetrimino *t, int board_size);
+t_point			get_position_n(t_tetrimino *t, int n, int board_size);
+int				get_column_index(int x, int y, int board_size);
 t_matrix		*create_matrix(t_list *tetriminos, int bsize, int hole_nb);
+void			fill_matrix(t_matrix *matrix, t_list *tetriminos, int hole_nb);
+void			fill_holes(t_matrix *matrix, int hole_nb, int row, int piece_col);
 
 /*
 ** TO BE DELETED

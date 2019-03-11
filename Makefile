@@ -84,6 +84,7 @@ CTYPES = main.c \
 		 tetriminos_2.c \
 		 matrix_1.c \
 		 matrix_2.c \
+		 fill_matrix.c \
 		 point.c
 
 TEST = test.c
