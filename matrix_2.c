@@ -6,7 +6,7 @@
 /*   By: qutrinh <qutrinh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 01:09:02 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 03:50:21 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 04:04:16 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,21 @@ t_point		get_position_n(t_tetrimino *t, int n, int board_size)
 		}
 	}
 	return (p);
+}
+
+void		free_matrix(t_matrix *matrix)
+{
+	int		i;
+
+	if (matrix != NULL)
+	{
+		i = -1;
+		while (++i < matrix->rows_nb)
+		{
+			if (matrix->m[i] != NULL)
+				free(matrix->m[i]);
+		}
+		free(matrix->m);
+		free(matrix);
+	}
 }

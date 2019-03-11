@@ -6,7 +6,7 @@
 /*   By: qutrinh <qutrinh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/11 03:40:29 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 03:40:50 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 04:18:05 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** fills the matrix with 0's and 1's (starting position) :
 */
 
-static	void	fill_matrix_v1(t_matrix *matrix, int row, int piece_col,
+static void		fill_matrix_v1(t_matrix *matrix, int row, int piece_col,
 		t_point current_p)
 {
 	int			col;
@@ -30,10 +30,10 @@ static	void	fill_matrix_v1(t_matrix *matrix, int row, int piece_col,
 static void		fill_matrix_v2(t_matrix *matrix, int piece_col,
 		int *arr, t_tetrimino *t)
 {
-	int		j;
-	int		origin_x;
-	int		origin_y;
-	t_point	current_p;
+	int			j;
+	int			origin_x;
+	int			origin_y;
+	t_point		current_p;
 
 	current_p = get_position_n(t, arr[1], matrix->board_size);
 	origin_x = current_p.x;

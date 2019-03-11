@@ -6,7 +6,7 @@
 /*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 03:51:09 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/11 04:04:36 by qutrinh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char			*get_pattern(int index);
 t_bool			validate_file(int fd);
 t_point			new_point(int a, int b);
 t_list			*get_tetriminos(char **av);
+void			free_tetriminos(t_list *tetrimino_list);
 t_bool			read_tetriminos(t_list *tetriminos, char *tetri_str, char c);
 t_point			set_point(int a, int b);
 void			print_board(t_board board);
@@ -75,6 +76,7 @@ int				get_column_index(int x, int y, int board_size);
 t_matrix		*create_matrix(t_list *tetriminos, int bsize, int hole_nb);
 void			fill_matrix(t_matrix *matrix, t_list *tetriminos, int hole_nb);
 void			fill_holes(t_matrix *matrix, int hole_nb, int row, int piece_col);
+void			free_matrix(t_matrix *matrix);
 
 /*
 ** TO BE DELETED
