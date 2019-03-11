@@ -12,8 +12,11 @@
 
 #include "main.h"
 
-void	set_point(t_point *p, int a, int b)
+t_point	set_point(int a, int b)
 {
+	t_point	p;
+
 	p.x = a;
 	p.y = b;
+	return (p);
 }

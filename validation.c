@@ -84,8 +84,6 @@ static t_bool	validate_pattern(char *tetri, char *pattern)
 	if (ft_charcount('#', simplified) != 4)
 		return (false);
 	tmp = ft_strstr(simplified, pattern);
-	printf("reduced: %s\n", simplified);
-	printf("tmp: %p\n", tmp);
 	if (tmp == NULL || ft_strlen(pattern) == 0 || pattern == NULL)
 		return (false);
 	free(simplified);
@@ -107,8 +105,6 @@ static t_bool	validate(char *tetri)
 	while (i++ < 18)
 	{
 		tmp = get_pattern(i);
-		printf("current pattern index: %d\n", i);
-		printf("current pattern: %s\n", tmp);
 		if (validate_pattern(tetri, tmp) == true)
 		{
 			free(tmp);
