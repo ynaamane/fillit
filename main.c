@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 03:59:31 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/20 12:24:59 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int				print_error(char *err, int n)
 {
 	ft_putstr(err);
+	ft_putstr("\n");
 	return (n);
 }
 
