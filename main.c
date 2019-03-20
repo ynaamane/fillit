@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/20 12:24:59 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/20 15:09:06 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,14 @@ int				main(int ac, char **av)
 	print_tetriminos(tetriminos);
 	start_size = min_square(tetriminos);
 	printf("Board size is : %d\n", start_size);
-	hole_nb = get_hole_nb(tetriminos, start_size);
-	printf("Hole number is : %d\n", hole_nb);
+	//hole_nb = get_hole_nb(tetriminos, start_size);
+	//printf("Hole number is : %d\n", hole_nb);
+	
+	/*
 	matrix = create_matrix(tetriminos, start_size, hole_nb);
 	fill_matrix(matrix, tetriminos, hole_nb);
 	print_matrix(*matrix);
+	*/
 	free_tetriminos(tetriminos);
 	free_matrix(matrix);
 	while (1)

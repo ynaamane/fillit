@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/11 04:04:36 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/20 17:09:38 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ typedef struct	s_matrix
 	int			**m;
 
 }				t_matrix;
+
+typedef struct s_map
+{
+	int			size;
+	char		**aray;
+}				t_map;
+
+typedef struct s_etris
+{
+	char		**pos;
+	int			width;
+	int			height;
+	char		value;
+}				t_etris;
 
 int				print_error(char *err, int n);
 char			*get_pattern(int index);
