@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tetriminos_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <qutrinh@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 23:08:40 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/10 23:10:03 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/20 17:48:04 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,14 @@ int			get_positions_nb(t_tetrimino *t, int board_size)
 		}
 	}
 	return (positions_nb);
+}
+
+t_point		*point_new(int x, int y)
+{
+	t_point		*point;
+
+	point = ft_memalloc(sizeof(t_point));
+	point->x = x;
+	point->y = y;
+	return(point);
 }

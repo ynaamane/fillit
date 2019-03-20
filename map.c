@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/20 17:13:48 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/20 18:00:14 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ t_map	*map_new(int size)
 	return(map);
 }
 
+/*
+** This function allow you to place a tetriminos with a specified adress.
+** Also checking of the placement is possible.
+*/
+
 int		place(t_etris *tetris, t_map *map, int x, int y)
 {
 	int i;
@@ -92,5 +97,30 @@ int		place(t_etris *tetris, t_map *map, int x, int y)
 		}
 		i++;
 	}
+	set_piece(tetri, map, point_new(x, y), tetri->value);
 	return(1);
+}
+
+/*
+** Sets a tetrimino on a map at a position with the specified character.
+** To place, call with c=tetri->value. To remove, call with c='.'.
+*/
+void	set_piece(t_etri *, t_map *map, t_point *point, char c)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while(i < tetri-> width)
+	{
+		j = 0;
+		while(j < tetri->height)
+		{
+			if(tetri->pos[j][i] == '#')
+				map->array[point->y +i][point->x + i] = c;
+			j++;
+		}
+		i++;
+	}
+	ft_memdell((void **)&point);
 }

@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/20 17:09:38 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/20 18:00:46 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,11 @@ t_matrix		*create_matrix(t_list *tetriminos, int bsize, int hole_nb);
 void			fill_matrix(t_matrix *matrix, t_list *tetriminos, int hole_nb);
 void			fill_holes(t_matrix *matrix, int hole_nb, int row, int piece_col);
 void			free_matrix(t_matrix *matrix);
+t_point		*point_new(int x, int y);
+int		place(t_etris *tetris, t_map *map, int x, int y);
+t_map	*map_new(int size);
+void	print_map(t_map *map);
+void	free_map(t_map *map);
 
 /*
 ** TO BE DELETED
