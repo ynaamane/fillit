@@ -3,37 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 18:53:32 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/20 15:09:06 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-int				ft_error(char *err, int n)
+int				print_error(char *err, int n)
 {
 	ft_putstr(err);
+	ft_putstr("\n");
 	return (n);
+}
+
+/*
+**	Minimum starting board size
+*/
+
+static int		min_square(t_list *tetriminos)
+{
+	int			min_size;
+	int			cell_nb;
+
+	cell_nb = get_tetriminos_nb(tetriminos) * 4;
+	min_size = 2;
+	while (min_size * min_size < cell_nb)
+		min_size++;
+	return (min_size);
 }
 
 int				main(int ac, char **av)
 {
-	int		fd;
+	int			start_size;
+	t_list		*tetriminos;
+	t_matrix	*matrix;
+	int			hole_nb;
 
 	if (ac != 2)
-		ft_error("usage: ./fillit target_file", 0);
-	fd = open(av[1], O_RDONLY);
-	if (fd == -1)
-	{
-		close(fd);
-		return (-1);
-	}
-	if (validate_file(fd) == true)
-		ft_putstr("Valid!");
-	else
-		ft_putstr("Not valid!");
-	close(fd);
-	return (1);
+		return (print_error("usage: ./fillit target_file", 0));
+	if (!(tetriminos = get_tetriminos(av)))
+		return (print_error("error", 0));
+	print_tetriminos(tetriminos);
+	start_size = min_square(tetriminos);
+	printf("Board size is : %d\n", start_size);
+	//hole_nb = get_hole_nb(tetriminos, start_size);
+	//printf("Hole number is : %d\n", hole_nb);
+	
+	/*
+	matrix = create_matrix(tetriminos, start_size, hole_nb);
+	fill_matrix(matrix, tetriminos, hole_nb);
+	print_matrix(*matrix);
+	*/
+	free_tetriminos(tetriminos);
+	free_matrix(matrix);
+	while (1)
+		;
+
+	return (0);
 }

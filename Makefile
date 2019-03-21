@@ -1,14 +1,14 @@
-#* ************************************************************************** *#
-#*                                                                            *#
-#*                                                        :::      ::::::::   *#
-#*   Makefile                                           :+:      :+:    :+:   *#
-#*                                                    +:+ +:+         +:+     *#
-#*   By: qutrinh <qutrinh@student.42.fr>            +#+  +:+       +#+        *#
-#*                                                +#+#+#+#+#+   +#+           *#
-#*   Created: 2017/08/11 12:18:48 by qtrinh            #+#    #+#             *#
-#*   Updated: 2017/08/11 12:22:04 by qtrinh           ###   ########.fr       *#
-#*                                                                            *#
-#* ************************************************************************** *#
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/08/11 12:18:48 by qutrinh           #+#    #+#              #
+#    Updated: 2019/03/20 13:24:00 by ynaamane         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = fillit
 
@@ -76,7 +76,16 @@ LIBFT_CTYPES = libft/ft_itoa.c \
 
 CTYPES = main.c \
 		 validation.c \
-		 patterns.c
+		 patterns.c \
+		 create_tetriminos.c \
+		 read_tetriminos.c \
+		 board.c \
+		 tetriminos_1.c \
+		 tetriminos_2.c \
+		 matrix_1.c \
+		 matrix_2.c \
+		 fill_matrix.c \
+		 point.c
 
 TEST = test.c
 
@@ -88,17 +97,14 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(LIBFT_NAME): $(LIBFT_BINS)
+$(LIBFT_NAME): $(LIBFT_CTYPES)
+	@gcc $(FLAGS) -I. -c $(LIBFT_CTYPES)
+	@echo "\033[32mCompiled libft .c files with flags.\033[0m"
 	@ar rc $(LIBFT_NAME) $(LIBFT_BINS)
 	@echo "\033[32mLibrary libft.a created.\033[0m"
 	@ranlib $(LIBFT_NAME)
 
-$(BINS): $(LIBFT_CTYPES)
-	@gcc $(FLAGS) -I. -c $(LIBFT_CTYPES)
-	@echo "\033[32mCompiled libft .c files with flags.\033[0m"
-
-$(NAME): $(BINS)
-	@make $(LIBFT_NAME)
+$(NAME): $(LIBFT_NAME)
 	@gcc $(FLAG) -c $(CTYPES)
 	@gcc $(FLAG) -o $(NAME) $(BINS) -L. -lft
 	@echo "\033[32mCompiled all 'fillit' .c type files.\033[0m"
