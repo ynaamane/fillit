@@ -58,3 +58,4 @@ dkms.conf
 #project specific files
 fillit
 *.fillit
+.vscode/settings.json

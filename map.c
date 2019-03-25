@@ -6,11 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/20 18:00:14 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:44:07 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.c"
+#include "main.h"
 
 /*
 ** Free an alocated map structure
@@ -23,11 +23,11 @@ void	free_map(t_map *map)
 	i = 0;
 	while (i < map->size)
 	{
-		ft_memdel(void **)&(map->array[i]);
+		ft_memdel((void **)&(map->array[i]));
 		i++;
 	}
 	ft_memdel((void **)&(map->array));
-	ft_memdel((void **)&map)
+	ft_memdel((void **)&map);
 }
 
 /*
@@ -80,18 +80,18 @@ t_map	*map_new(int size)
 ** Also checking of the placement is possible.
 */
 
-int		place(t_etris *tetris, t_map *map, int x, int y)
+int		place(t_etris *tetri, t_map *map, int x, int y)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while(i < tetris->width)
+	while(i < tetri->width)
 	{
 		j = 0;
-		while (j < tetris->height)
+		while (j < tetri->height)
 		{
-			if (tetris->pos[j][i] == '#' && map->array[y + j][x + i] != '.')
+			if (tetri->pos[j][i] == '#' && map->array[y + j][x + i] != '.')
 				return(0);
 			j++;
 		}
@@ -105,7 +105,8 @@ int		place(t_etris *tetris, t_map *map, int x, int y)
 ** Sets a tetrimino on a map at a position with the specified character.
 ** To place, call with c=tetri->value. To remove, call with c='.'.
 */
-void	set_piece(t_etri *, t_map *map, t_point *point, char c)
+
+void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
 {
 	int i;
 	int j;

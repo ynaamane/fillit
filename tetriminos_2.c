@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/10 23:08:40 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/20 17:48:04 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/21 16:44:32 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,15 @@ t_point		*point_new(int x, int y)
 	point->y = y;
 	return(point);
 }
+
+// t_etris		*tetris_new(char **pos, int width, int height, char value)
+// {
+// 	t_etris		*tetris;
+
+// 	tetris = ft_memalloc(sizeof(t_etris));
+// 	tetris->pos = pos;
+// 	tetris->height = height;
+// 	tetris->value = value;
+// 	tetris->width = width;
+// 	return(tetris);
+// }
