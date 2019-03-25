@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 18:47:24 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 21:06:50 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/03/25 16:36:34 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ int				ft_isupper(int c);
 int				ft_islower(int c);
 int				ft_charcount(char c, char *str);
 char			*ft_capitalize(char *s);
+size_t			ft_lstcount(t_list *lst);
 
 #endif

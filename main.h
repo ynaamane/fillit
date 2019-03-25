@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/25 16:19:16 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/25 16:42:12 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,6 @@ typedef struct s_etris
 	int			height;
 	char		value;
 }				t_etris;
-
-typedef struct s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-	
-}					t_list;
-
 
 int				print_error(char *err, int n);
 char			*get_pattern(int index);

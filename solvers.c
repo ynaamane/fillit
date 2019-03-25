@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 15:15:59 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/25 16:20:44 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/25 16:41:06 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int		solve_map(t_map *map, t_list *list)
 	return(0);
 }
 
+/*
+** Get a rounded up sqrt of a number
+*/
+
 int		high_sqrt(int n)
 {
 	int		size;
@@ -53,4 +57,20 @@ int		high_sqrt(int n)
 	while(size * size < n)
 		size++;
 	return(size);
+}
+
+t_map	*solve(t_list *list)
+{
+	t_map	*map;
+	int		size;
+
+	size = high_sqrt(ft_lstcount(list) * 4);
+	map = map_new(size);
+	while(!solve_map(map, list))
+	{
+		size++;
+		free_map(map);
+		map = map_new(size);
+	}
+	return(map);
 }
