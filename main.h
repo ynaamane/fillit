@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/03/25 15:27:15 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/25 16:19:16 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ t_map			*map_new(int size);
 void			print_map(t_map *map);
 void			free_map(t_map *map);
 int				solve_map(t_map *map, t_list *list);
+int				high_sqrt(int n);
 
 // t_etris		*tetris_new(char **pos, int width, int height, char value);
 
