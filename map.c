@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/21 16:44:07 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:20:33 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	print_map(t_map *map)
 }
 
 /*
-** Allocates a new map structure withe a given size
+** Allocates a new map structure with a given size
 */
 
 t_map	*map_new(int size)

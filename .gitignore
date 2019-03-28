@@ -59,3 +59,9 @@ dkms.conf
 fillit
 *.fillit
 .vscode/settings.json
+.vscode/ipch/cc2f54a10371135e/map.ipch
+.vscode/ipch/17d46b5165d65a2c/solvers.ipch
+.vscode/ipch/aee7b58bc95e8c91/mmap_address.bin
+.vscode/ipch/aee7b58bc95e8c91/validation.ipch
+.vscode/ipch/17d46b5165d65a2c/solvers.ipch
+.vscode/ipch/cc2f54a10371135e/map.ipch
