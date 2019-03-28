@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 15:15:59 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/25 16:41:06 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/03/28 11:37:01 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ int		high_sqrt(int n)
 		size++;
 	return(size);
 }
+
+/*
+** Tries to solve maps starting from the smallest possible size.
+*/
 
 t_map	*solve(t_list *list)
 {
