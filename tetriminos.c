@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/02 13:20:17 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/05 13:57:10 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,33 @@ void		free_tetris(t_etris *tetri)
 	ft_memdel((void **)&tetri);
 }
 
+/*
+** Use this fonction to create a new tetriminos structure
+*/
+
 t_etris		*tetris_new(char **pos, int width, int height, char value)
 {
-	t_etris		*tetris
+	t_etris		*tetris;
 
 	tetris = ft_memalloc(sizeof(t_etris));
+	tetris->pos = pos;
+	tetris->value = value;
+	tetris->height = height;
+	tetris-> width = width;
+	
+	return (tetris);
+}
+
+/*
+** Use this fonction to create a new point structure
+*/
+
+t_point		*point_new(int x,int y)
+{
+	t_point		*point;
+
+	point = ft_memalloc(sizeof(t_point));
+	point->x = x;
+	point->y = y;
+	return (point);
 }
