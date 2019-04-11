@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/04/11 17:38:37 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/04/11 17:42:20 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,13 +52,13 @@ $(NAME): $(OBJ)
 	@echo "\033[32mCompiled all 'fillit' .c type files.\033[0m"
 
 clean:
-	@rm- rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 	@echo "\033[31mBinary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.o
 	@echo "\033[31mLibft binary files deleted.\033[0m"
 
 fclean: clean
-	@rm- rf $(NAME)
+	@rm -rf $(NAME)
 	@echo "\033[31mMain executable file deleted.\033[0m"
 
 re:
