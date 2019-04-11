@@ -6,14 +6,14 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/04/02 13:19:26 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/11 17:39:37 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_H
 # define MAIN_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <stdio.h>
