@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/04/11 17:42:20 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/04/17 17:00:08 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,8 @@ clean:
 	@echo "\033[31mBinary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.o
 	@echo "\033[31mLibft binary files deleted.\033[0m"
+	@rm -rf $(LIB_DIR)/*.a
+	@echo "\033[31mLibft.a as been deleted\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
