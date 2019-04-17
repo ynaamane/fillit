@@ -21,9 +21,10 @@ LIB_DIR := ./libft
 # src / obj files
 SRC		:= 	main.c \
 			reader.c \
-			solver.c \
+			solvers.c \
 			map.c \
-			tetrimino.c
+			tetriminos.c \
+			patterns.c
 OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # compiler and flags

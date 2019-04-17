@@ -103,5 +103,6 @@ void			free_tetris(t_etris *tetri);
 t_etris			*tetris_new(char **pos, int width, int height, char value);
 t_list			*free_list(t_list *list);
 void			ft_lstrev(t_list **alst);
+void			set_piece(t_etris *tetri, t_map *map, t_point *point, char c);
 
 #endif
