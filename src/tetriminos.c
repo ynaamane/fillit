@@ -6,11 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/05 13:57:10 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/17 17:06:17 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "../includes/main.h"
 
 /*
 ** Can be use for freeing a list made with read_tetri

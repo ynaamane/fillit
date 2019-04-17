@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   patterns.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 14:21:02 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/15 18:52:10 by qutrinh          ###   ########.fr       */
+/*   Updated: 2019/04/17 17:05:55 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "../includes/main.h"
 
 static char	*get_pattern_part2(int index)
 {
