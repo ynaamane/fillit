@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/04/17 17:00:08 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/04/17 17:01:51 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # compiler and flags
 CC		:=	gcc
-CFLAGS	:=	-Wall -Wextra -Werror -pedantic
-OFLAGS	:=	-pipe -flto
-CFLAGS	+=	$(OFLAGS)
+CFLAGS	:=	-Wall -Wextra -Werror #-pedantic
+#OFLAGS	:=	-pipe -flto
+#CFLAGS	+=	$(OFLAGS)
 
 # libraries
 L_FT	:= $(LIB_DIR)
