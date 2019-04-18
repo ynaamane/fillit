@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/17 17:05:40 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/18 09:58:50 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,5 @@ void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
 		}
 		i++;
 	}
-	ft_memdell((void **)&point);
+	ft_memdel((void **)&point);
 }
