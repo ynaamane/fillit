@@ -6,11 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 16:35:13 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/17 16:35:45 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/18 10:53:39 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "../includes/main.h"
 
 void		ft_lstrev(t_list **alst)
 {
