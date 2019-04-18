@@ -25,6 +25,7 @@ SRC		:= 	main.c \
 			map.c \
 			tetriminos.c \
 			patterns.c \
+			ft_lstcount.c \
 			ft_lstrev.c
 OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 

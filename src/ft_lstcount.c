@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 19:56:58 by sebbaill          #+#    #+#             */
-/*   Updated: 2018/12/18 19:37:59 by sebbaill         ###   ########.fr       */
+/*   Created: 2019/03/25 16:34:34 by ynaamane          #+#    #+#             */
+/*   Updated: 2019/03/25 16:38:14 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "../includes/main.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+size_t		ft_lstcount(t_list *lst)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (((s1[i] != '\0') || (s2[i] != '\0')) && ((i < n)))
+	while (lst != NULL)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		lst = lst->next;
 		i++;
 	}
-	return (0);
+	return(i);
 }

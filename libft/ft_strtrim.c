@@ -3,38 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 18:46:38 by qutrinh           #+#    #+#             */
-/*   Updated: 2018/12/06 18:48:19 by qutrinh          ###   ########.fr       */
+/*   Created: 2018/11/13 19:50:42 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/22 18:39:49 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(const char *s)
 {
-	size_t	c;
-	size_t	i;
+	int		i;
+	int		j;
+	int		len;
+	int		end;
 	char	*str;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-		s++;
-	if (!*s)
-		return (ft_strdup(""));
-	c = ft_strlen(s) - 1;
-	while (s[c] == ' ' || s[c] == '\n' || s[c] == '\t')
-		c--;
-	str = ft_strnew(c + 1);
-	if (!str)
-		return (NULL);
-	while (s[i] && i <= c)
-	{
-		str[i] = s[i];
+	len = ft_strlen(s);
+	end = len;
+	while (((s[i] == '\t') || (s[i] == '\n') || (s[i] == ' ')) && ((s[i])))
 		i++;
-	}
+	if (i == end)
+		return (ft_strdup(""));
+	j = i;
+	while ((s[--end] == '\t') || (s[end] == '\n') || (s[end] == ' '))
+		j++;
+	if (!(str = ft_strsub(s, i, len - j)))
+		return (NULL);
 	return (str);
 }

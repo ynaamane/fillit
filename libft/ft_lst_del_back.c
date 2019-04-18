@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lst_del_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/20 15:45:50 by sebbaill          #+#    #+#             */
-/*   Updated: 2018/12/20 16:56:37 by sebbaill         ###   ########.fr       */
+/*   Created: 2019/01/10 19:59:56 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/17 16:07:05 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+t_list	*ft_lst_del_back(t_list **lst)
 {
-	unsigned int i;
-	unsigned int j;
+	t_list	*temp;
+	t_list	*before;
 
-	i = 0;
-	j = 0;
-	if (to_find[0] == '\0')
-		return ((char*)str);
-	while ((str[i] != '\0') && (i < len))
+	if (!lst)
+		return (*lst);
+	if ((*lst)->next == NULL)
 	{
-		j = 0;
-		while ((to_find[j] == str[i + j]) && (i + j < len))
-		{
-			if (!(to_find[j + 1]))
-				return ((char*)&str[i]);
-			j++;
-		}
-		i++;
+		free(lst);
+		lst = NULL;
+		return (*lst);
 	}
-	return (0);
+	temp = *lst;
+	before = *lst;
+	while (temp->next != NULL)
+	{
+		before = temp;
+		temp = temp->next;
+	}
+	before->next = NULL;
+	free(temp);
+	temp = NULL;
+	return (*lst);
 }

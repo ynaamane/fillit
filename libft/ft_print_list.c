@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_print_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/20 15:45:50 by sebbaill          #+#    #+#             */
-/*   Updated: 2018/12/20 16:56:37 by sebbaill         ###   ########.fr       */
+/*   Created: 2019/01/10 17:32:06 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/10 17:32:08 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+void	ft_print_list(t_list **list)
 {
-	unsigned int i;
-	unsigned int j;
+	t_list	*next;
 
-	i = 0;
-	j = 0;
-	if (to_find[0] == '\0')
-		return ((char*)str);
-	while ((str[i] != '\0') && (i < len))
+	while (list)
 	{
-		j = 0;
-		while ((to_find[j] == str[i + j]) && (i + j < len))
-		{
-			if (!(to_find[j + 1]))
-				return ((char*)&str[i]);
-			j++;
-		}
-		i++;
+		next = (*list)->next;
+		ft_putstr((*list)->content);
+		ft_putchar('\n');
+		ft_putnbr((*list)->content_size);
+		*list = next;
 	}
-	return (0);
 }

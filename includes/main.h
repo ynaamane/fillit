@@ -15,6 +15,8 @@
 
 # include "../libft/libft.h"
 # include <sys/types.h>
+# include <sys/types.h>
+# include <fcntl.h>
 # include <sys/uio.h>
 # include <stdio.h>
 
@@ -107,5 +109,6 @@ void			ft_lstrev(t_list **alst);
 void			set_piece(t_etris *tetri, t_map *map, t_point *point, char c);
 t_list			*read_tetri(int fd);
 t_map			*solve(t_list *list);
+size_t			ft_lstcount(t_list *lst);
 
 #endif

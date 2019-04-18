@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcount.c                                      :+:      :+:    :+:   */
+/*   ft_count_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/25 16:34:34 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/03/25 16:38:14 by ynaamane         ###   ########.fr       */
+/*   Created: 2019/01/03 19:11:03 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/03 21:51:54 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_lstcount(t_list *lst)
+int		ft_count_numbers(int n)
 {
-	size_t	i;
+	int count;
 
-	i = 0;
-	while (lst != NULL)
+	count = (n < 0) ? 2 : 1;
+	while ((n / 10) != 0)
 	{
-		lst = lst->next;
-		i++;
+		n /= 10;
+		count++;
 	}
-	return(i);
+	return (count);
 }
