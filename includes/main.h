@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/04/18 10:51:02 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/18 14:41:03 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,30 +67,31 @@ typedef struct s_etris
 	char		value;
 }				t_etris;
 
-int				print_error(char *err, int n);
-char			*get_pattern(int index);
-t_bool			validate_file(int fd);
-t_point			new_point(int a, int b);
-t_list			*get_tetriminos(char **av);
-void			free_tetriminos(t_list *tetrimino_list);
-t_bool			read_tetriminos(t_list *tetriminos, char *tetri_str, char c);
-t_point			set_point(int a, int b);
-void			print_board(t_board board);
-t_bool			cmp_board(t_board board1, t_board board2);
-t_board			dup_board(t_board board);
-t_board			create_new_board(int size);
-int				get_hole_nb(t_list *tetriminos, int board_size);
-t_point			*find_point(int x, int y, t_board board);
-t_bool			can_be_placed(t_tetrimino *t, t_point p, int board_size);
-t_board			put_tetrimino(t_point p, t_tetrimino t, t_board board);
-int				get_tetriminos_nb(t_list *tetriminos);
-int				get_positions_nb(t_tetrimino *t, int board_size);
-t_point			get_position_n(t_tetrimino *t, int n, int board_size);
-int				get_column_index(int x, int y, int board_size);
-t_matrix		*create_matrix(t_list *tetriminos, int bsize, int hole_nb);
-void			fill_matrix(t_matrix *matrix, t_list *tetriminos, int hole_nb);
-void			fill_holes(t_matrix *matrix, int hole_nb, int row, int piece_col);
-void			free_matrix(t_matrix *matrix);
+// int				print_error(char *err, int n);
+// char			*get_pattern(int index);
+// t_bool			validate_file(int fd);
+// t_point			new_point(int a, int b);
+// t_list			*get_tetriminos(char **av);
+// void			free_tetriminos(t_list *tetrimino_list);
+// t_bool			read_tetriminos(t_list *tetriminos, char *tetri_str, char c);
+// t_point			set_point(int a, int b);
+// void			print_board(t_board board);
+// t_bool			cmp_board(t_board board1, t_board board2);
+// t_board			dup_board(t_board board);
+// t_board			create_new_board(int size);
+// int				get_hole_nb(t_list *tetriminos, int board_size);
+// t_point			*find_point(int x, int y, t_board board);
+// t_bool			can_be_placed(t_tetrimino *t, t_point p, int board_size);
+// t_board			put_tetrimino(t_point p, t_tetrimino t, t_board board);
+// int				get_tetriminos_nb(t_list *tetriminos);
+// int				get_positions_nb(t_tetrimino *t, int board_size);
+// t_point			get_position_n(t_tetrimino *t, int n, int board_size);
+// int				get_column_index(int x, int y, int board_size);
+// t_matrix		*create_matrix(t_list *tetriminos, int bsize, int hole_nb);
+// void			fill_matrix(t_matrix *matrix, t_list *tetriminos, int hole_nb);
+// void			fill_holes(t_matrix *matrix, int hole_nb, int row, int piece_col);
+// void			free_matrix(t_matrix *matrix);
+
 t_point			*point_new(int x, int y);
 int				place(t_etris *tetris, t_map *map, int x, int y);
 t_map			*map_new(int size);
