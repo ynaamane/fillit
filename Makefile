@@ -24,7 +24,8 @@ SRC		:= 	main.c \
 			solvers.c \
 			map.c \
 			tetriminos.c \
-			patterns.c
+			patterns.c \
+			ft_lstrev.c
 OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # compiler and flags

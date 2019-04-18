@@ -16,6 +16,7 @@ CTYPES = ft_itoa.c \
 		 ft_memalloc.c \
 		 ft_memdel.c \
 		 ft_putchar.c \
+		 ft_lstcount.c \
 		 ft_putchar_fd.c \
 		 ft_putendl.c \
 		 ft_putendl_fd.c \
