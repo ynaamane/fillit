@@ -72,7 +72,7 @@ t_map	*map_new(int size)
 		}
 		i++;
 	}
-	return(map);
+	return (map);
 }
 
 /*
@@ -86,19 +86,19 @@ int		place(t_etris *tetri, t_map *map, int x, int y)
 	int j;
 
 	i = 0;
-	while(i < tetri->width)
+	while (i < tetri->width)
 	{
 		j = 0;
 		while (j < tetri->height)
 		{
 			if (tetri->pos[j][i] == '#' && map->array[y + j][x + i] != '.')
-				return(0);
+				return (0);
 			j++;
 		}
 		i++;
 	}
 	set_piece(tetri, map, point_new(x, y), tetri->value);
-	return(1);
+	return (1);
 }
 
 /*
@@ -112,13 +112,13 @@ void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
 	int j;
 
 	i = 0;
-	while(i < tetri-> width)
+	while(i < tetri->width)
 	{
 		j = 0;
 		while(j < tetri->height)
 		{
 			if(tetri->pos[j][i] == '#')
-				map->array[point->y +i][point->x + i] = c;
+				map->array[point->y +j][point->x + i] = c;
 			j++;
 		}
 		i++;
