@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_capitalize.c                                    :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 13:05:55 by qutrinh           #+#    #+#             */
-/*   Updated: 2018/11/24 13:06:07 by qutrinh          ###   ########.fr       */
+/*   Created: 2019/01/03 21:19:27 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/03 21:51:17 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_capitalize(char *s)
+int		ft_count_words(const char *s, char c)
 {
-	char	*new;
 	int		i;
+	int		nb_words;
 
 	if (!s)
-		return (NULL);
-	new = ft_strnew(ft_strlen(s));
-	new[0] = ft_toupper(s[0]);
+		return (0);
 	i = 0;
-	while (*(s + ++i))
-		if (!ft_isalnum(s[i - 1]) && ft_isalnum(s[i]))
-			new[i] = ft_toupper(s[i]);
-		else
-			new[i] = s[i];
-	return (new);
+	nb_words = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if ((s[i] != c) && (s[i] != '\0'))
+			nb_words++;
+		while ((s[i] != c) && (s[i] != '\0'))
+			i++;
+	}
+	return (nb_words);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_lst_push_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 13:12:30 by qutrinh           #+#    #+#             */
-/*   Updated: 2018/11/24 13:12:35 by qutrinh          ###   ########.fr       */
+/*   Created: 2019/01/23 16:25:15 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/23 16:25:16 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_islower(int c)
+void	ft_lst_push_front(t_list **lst, t_list *new)
 {
-	return (c <= 'z' && c >= 'a');
+	t_list	*temp;
+
+	temp = *lst;
+	if (temp->next == NULL)
+		new->next = NULL;
+	else
+		new->next = temp;
 }

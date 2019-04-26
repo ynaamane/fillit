@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_lst_del_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 13:13:06 by qutrinh           #+#    #+#             */
-/*   Updated: 2018/11/24 13:13:11 by qutrinh          ###   ########.fr       */
+/*   Created: 2019/01/10 20:23:45 by sebbaill          #+#    #+#             */
+/*   Updated: 2019/01/17 16:16:54 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isupper(int c)
+t_list	*ft_lst_del_front(t_list **lst)
 {
-	return (c <= 'Z' && c >= 'A');
+	t_list	*temp;
+
+	if (!lst)
+		return (*lst);
+	temp = (*lst)->next;
+	free(*lst);
+	*lst = NULL;
+	return (temp);
 }

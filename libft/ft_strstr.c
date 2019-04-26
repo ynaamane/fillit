@@ -3,39 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 18:46:06 by qutrinh           #+#    #+#             */
-/*   Updated: 2018/11/24 18:46:21 by qutrinh          ###   ########.fr       */
+/*   Created: 2018/11/13 19:50:42 by sebbaill          #+#    #+#             */
+/*   Updated: 2018/12/18 19:06:22 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strstr(const char *big, const char *little)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	int	i;
-	int	j;
-	int n;
+	int		i;
+	int		j;
+	int		cpi;
 
 	i = 0;
-	if (ft_strlen((char *)little) == 0)
-		return ((char *)big);
-	while (big[i])
+	j = 0;
+	if (to_find[0] == '\0')
+		return ((char*)str);
+	while (str[i] != '\0')
 	{
-		j = 0;
-		if (big[i] == little[j])
+		if (str[i] == to_find[0])
 		{
-			n = i;
-			while (big[n] == little[j] && little[j])
+			cpi = i;
+			while (str[i++] == to_find[j++])
 			{
-				n++;
-				j++;
+				if (to_find[j] == '\0')
+					return ((char*)&str[cpi]);
 			}
-			if (little[j] == '\0')
-				return ((char *)(big + i));
+			j = 0;
+			i = cpi;
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

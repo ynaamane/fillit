@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_charcount.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qutrinh <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 21:02:26 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/02/22 18:24:51 by qutrinh          ###   ########.fr       */
+/*   Created: 2018/12/12 20:10:58 by sebbaill          #+#    #+#             */
+/*   Updated: 2018/12/12 20:11:09 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_charcount(char c, char *str)
+char	*ft_strrev(char *str)
 {
 	int		i;
-	int		count;
+	int		j;
+	char	temp;
 
-	if (!str)
-		return ('\0');
-	count = 0;
 	i = 0;
-	while (str[i])
+	j = 0;
+	while (str[i] != '\0')
 	{
-		if (str[i] == c)
-			count++;
 		i++;
 	}
-	return (count);
+	i--;
+	while (i > j)
+	{
+		temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		i--;
+		j++;
+	}
+	return (str);
 }
