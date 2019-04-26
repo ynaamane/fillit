@@ -65,7 +65,7 @@ t_map	*map_new(int size)
 	{
 		map->array[i] = ft_strnew(size);
 		j = 0;
-		while(j < size)
+		while (j < size)
 		{
 			map->array[i][j] = '.';
 			j++;
@@ -112,13 +112,13 @@ void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
 	int j;
 
 	i = 0;
-	while(i < tetri->width)
+	while (i < tetri->width)
 	{
 		j = 0;
-		while(j < tetri->height)
+		while (j < tetri->height)
 		{
-			if(tetri->pos[j][i] == '#')
-				map->array[point->y +j][point->x + i] = c;
+			if (tetri->pos[j][i] == '#')
+				map->array[point->y + j][point->x + i] = c;
 			j++;
 		}
 		i++;
