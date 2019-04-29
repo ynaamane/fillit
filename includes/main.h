@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 16:20:12 by qutrinh           #+#    #+#             */
-/*   Updated: 2019/04/18 14:41:03 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/29 17:25:50 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct	s_board
 	t_point		*p;
 }					t_board;
 
-typedef struct	s_matrix
+/*typedef struct	s_matrix
 {
 	int			board_size;
 	int			tetri_nb;
@@ -54,6 +54,7 @@ typedef struct	s_matrix
 	int			**m;
 
 }				t_matrix;
+*/
 
 typedef struct s_map
 {
@@ -98,13 +99,13 @@ t_point			*point_new(int x, int y);
 int				place(t_etris *tetris, t_map *map, int x, int y);
 t_map			*map_new(int size);
 void			print_map(t_map *map);
-void			free_map(t_map *map);
+void			free_map(t_map **map);
 int				solve_map(t_map *map, t_list *list);
 int				high_sqrt(int n);
 void			min_max(char *str, t_point *min, t_point *max);
-void			free_tetris(t_etris *tetri);
+void			free_tetris(t_etris **tetri);
 t_etris			*tetris_new(char **pos, int width, int height, char value);
-t_list			*free_list(t_list *list);
+void			free_list(t_list **list);
 void			ft_lstrev(t_list **alst);
 void			set_piece(t_etris *tetri, t_map *map, t_point *point, char c);
 t_list			*read_tetri(int fd);

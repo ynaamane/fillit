@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 15:15:59 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/17 17:06:07 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/29 17:00:48 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_map	*solve(t_list *list)
 	while(!solve_map(map, list))
 	{
 		size++;
-		free_map(map);
+		free_map(&map);
 		map = map_new(size);
 	}
 	return(map);

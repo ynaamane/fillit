@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/17 17:06:17 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/29 17:30:46 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,37 @@
 ** Can be use for freeing a list made with read_tetri
 */
 
-t_list		*free_list(t_list *list)
+void	free_list(t_list **list)
 {
 	t_etris		*tetris;
 	t_list		*next;
 
-	while(list)
+	while(*list)
 	{
-		tetris = (t_etris *)list->content;
-		next = list->next;
-		free_tetris(tetris);
-		ft_memdel((void **)&list);
-		list = next;
+		tetris = (t_etris *)(*list)->content;
+		next = (*list)->next;
+		free_tetris(&tetris);
+		free(*list);
+		*list = next;
 	}
-	return(NULL);
 }
 
 /*
 ** Can be use for freeing a tetrimino structure
 */
 
-void		free_tetris(t_etris *tetri)
+void		free_tetris(t_etris **tetri)
 {
 	int y;
 
 	y = 0;
-	while (y < tetri->height)
+	while (y < (*tetri)->height)
 	{
-		ft_memdel((void **)(&(tetri->pos[y])));
+		ft_strdel(&(*tetri)->pos[y]);
 		y++;
 	}
-	ft_memdel((void **)&(tetri->pos[y]));
-	ft_memdel((void **)&tetri);
+	ft_memdel((void **)((*tetri)->pos));
+	ft_memdel((void **)(*tetri));
 }
 
 /*

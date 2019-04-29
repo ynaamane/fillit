@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/18 18:26:57 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/29 17:30:52 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(int argc, char **argv)
 	}
 	map = solve(list);
 	print_map(map);
-	free_map(map);
-	free_list(list);
+	free_map(&map);
+	free_list(&list);
 	return (0);
 }
