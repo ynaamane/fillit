@@ -89,10 +89,9 @@ SOURCEO = $(SOURCEC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(SOURCEO) $(HEADER)
-	$(CC) -c $(CFLAGS) $(SOURCEC) 
-	@echo "\n"
-	ar rc $(NAME) $(SOURCEO)
-	ranlib $(NAME)
+	@$(CC) -c $(CFLAGS) $(SOURCEC) 
+	@ar rc $(NAME) $(SOURCEO)
+	@ranlib $(NAME)
 
 clean:
 	rm -rf $(SOURCEO)
