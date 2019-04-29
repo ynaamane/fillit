@@ -6,7 +6,7 @@
 /*   By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 16:04:54 by sebbaill          #+#    #+#             */
-/*   Updated: 2018/11/20 16:22:29 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/04/29 15:32:18 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-<<<<<<< HEAD
-    free(*ap);
-    *ap = (NULL);
-=======
 	if (ap && *ap)
 	{
 		free(*ap);
 		*ap = NULL;
 	}
->>>>>>> 41189c25c31dbeb9a84ceeafea3d61c8409e678e
 }
