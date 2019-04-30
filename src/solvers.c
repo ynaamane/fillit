@@ -6,14 +6,14 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 15:15:59 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/17 17:06:07 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/30 15:44:47 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.h"
 
 /*
-** Adding backtracking to the solver
+** Backtracking implementation of the solver.
 */
 
 int		solve_map(t_map *map, t_list *list)
@@ -23,18 +23,18 @@ int		solve_map(t_map *map, t_list *list)
 	t_etris		*tetri;
 
 	if (list == NULL)
-		return(1);
+		return (1);
 	y = 0;
 	tetri = (t_etris *)(list->content);
 	while (y < map->size - tetri->height + 1)
 	{
 		x = 0;
-		while (x < map->size - tetri->height + 1)
+		while (x < map->size - tetri->width + 1)
 		{
-			if (place(tetri, map, x , y))
+			if (place(tetri, map, x, y))
 			{
 				if (solve_map(map, list->next))
-					return(1);
+					return (1);
 				else
 					set_piece(tetri, map, point_new(x, y), '.');
 			}
@@ -42,21 +42,21 @@ int		solve_map(t_map *map, t_list *list)
 		}
 		y++;
 	}
-	return(0);
+	return (0);
 }
 
 /*
-** Get a rounded up sqrt of a number
+** Gets the rounded up sqrt of a number. Equivalent to ceil(sqrt(n)).
 */
 
 int		high_sqrt(int n)
 {
-	int		size;
+	int size;
 
 	size = 2;
-	while(size * size < n)
+	while (size * size < n)
 		size++;
-	return(size);
+	return (size);
 }
 
 /*
@@ -70,11 +70,11 @@ t_map	*solve(t_list *list)
 
 	size = high_sqrt(ft_lstcount(list) * 4);
 	map = map_new(size);
-	while(!solve_map(map, list))
+	while (!solve_map(map, list))
 	{
 		size++;
 		free_map(map);
 		map = map_new(size);
 	}
-	return(map);
+	return (map);
 }
