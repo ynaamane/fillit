@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/25 15:15:59 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/29 17:00:48 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/07 17:01:05 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		solve_map(t_map *map, t_list *list)
 	while (y < map->size - tetri->height + 1)
 	{
 		x = 0;
-		while (x < map->size - tetri->height + 1)
+		while (x < map->size - tetri->width + 1)
 		{
 			if (place(tetri, map, x , y))
 			{
