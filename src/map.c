@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/18 09:58:50 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/04/29 17:05:55 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@
 ** Free an alocated map structure
 */
 
-void	free_map(t_map *map)
+void	free_map(t_map **map)
 {
 	int i;
 
 	i = 0;
-	while (i < map->size)
+	while (i < (*map)->size)
 	{
-		ft_memdel((void **)&(map->array[i]));
+		ft_strdel(&(*map)->array[i]);
 		i++;
 	}
-	ft_memdel((void **)&(map->array));
-	ft_memdel((void **)&map);
+	ft_memdel((void**)(*map)->array);
+	free(*map);
+	*map = NULL;
 }
 
 /*
