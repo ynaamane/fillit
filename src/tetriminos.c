@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/09 16:28:36 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/09 19:44:50 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,16 @@ void		free_tetris(t_etris **tetri)
 	int y;
 
 	y = 0;
-	while (y < (*tetri)->height)
+	if (!(tetri))
 	{
-		ft_strdel(&(*tetri)->pos[y]);
-		y++;
+		while (y < (*tetri)->height)
+		{
+			ft_strdel(&(*tetri)->pos[y]);
+			y++;
+		}
+		ft_memdel((void **)((*tetri)->pos));
+		ft_memdel((void **)(*tetri));
 	}
-	ft_memdel((void **)((*tetri)->pos));
-	ft_memdel((void **)(*tetri));
 }
 
 /*
