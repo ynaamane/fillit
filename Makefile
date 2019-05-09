@@ -31,7 +31,7 @@ OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # compiler and flags
 CC		:=	gcc
-CFLAGS	:=	-Wall -Wextra -Werror
+CFLAGS	:=	-g -o0 -Wall -Wextra -Werror
 
 # libraries
 L_FT	:= $(LIB_DIR)
