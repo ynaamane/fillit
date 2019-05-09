@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/09 11:22:16 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/09 16:13:15 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,14 +152,14 @@ t_list	*read_tetri(int fd)
 				|| (tetris = get_piece(buf, cur++)) == NULL)
 		{
 			ft_memdel((void **)&buf);
-			return (free_list(&list));
+			(free_list(&list));
 		}
 		ft_lstadd(&list, ft_lstnew(tetris, sizeof(t_etris)));
 		ft_memdel((void **)&tetris);
 	}
 	ft_memdel((void **)&buf);
 	if (count != 0)
-		return (free_list(&list));
+		(free_list(&list));
 	ft_lstrev(&list);
 	return (list);
 }

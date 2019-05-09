@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 15:06:05 by tdupont           #+#    #+#             */
-/*   Updated: 2019/05/09 11:18:31 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/09 16:12:05 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void			set_piece(t_etris *tetri, t_map *map, t_point *point, char c);
 t_map			*solve(t_list *list);
 t_point			*point_new(int x, int y);
 t_etris			*tetris_new(char **pos, int width, int height, char c);
-void			free_tetris(t_etris *tetri);
-t_list			free_list(t_list **list);
+void			free_tetris(t_etris **tetri);
+void			free_list(t_list **list);
 void			ft_lstrev(t_list **alst);
 size_t			ft_lstcount(t_list *lst);
 
