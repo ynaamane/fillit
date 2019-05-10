@@ -6,7 +6,7 @@
 #    By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 18:13:21 by sebbaill          #+#    #+#              #
-#    Updated: 2019/01/23 17:53:35 by sebbaill         ###   ########.fr        #
+#    Updated: 2019/05/10 21:37:57 by sebbaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,15 +83,27 @@ SOURCEC = ft_atoi.c \
 		ft_toupper.c \
 		ft_putendl.c \
 		ft_putendl_fd.c
-		
-SOURCEO = $(SOURCEC:.c=.o)
+
+BLUE = \033[36m
+UP = \033[A
+CUT = \033[K
+
+SOURCEO = $(SOURCEC:%.c=%.o)
 
 all: $(NAME)
 
+#$(NAME): $(SOURCEO) $(HEADER)
+#	@$(CC) -c $(CFLAGS) $(SOURCEC) 
+#	@ar rc $(NAME) $(SOURCEO)
+#	@ranlib $(NAME)
+
+%.o: %.c
+		@echo "${BLUE}compiling [$@] ...${END}"
+		@$(CC) $(CFLAGS) -o $@ -c $< -I.
+		@printf "$(UP)$(CUT)"
+
 $(NAME): $(SOURCEO) $(HEADER)
-	@$(CC) -c $(CFLAGS) $(SOURCEC) 
-	@ar rc $(NAME) $(SOURCEO)
-	@ranlib $(NAME)
+	@ar rcs $(NAME) $(SOURCEO)
 
 clean:
 	rm -rf $(SOURCEO)
@@ -100,3 +112,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
