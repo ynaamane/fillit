@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/09 19:44:50 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/10 17:47:18 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 ** Can be use for freeing a list made with read_tetri
 */
 
-void	free_list(t_list **list)
+void			free_list(t_list **list)
 {
 	t_etris		*tetris;
 	t_list		*next;
-	while(*list)
+
+	while (*list)
 	{
 		tetris = (t_etris *)(*list)->content;
 		next = (*list)->next;
 		free_tetris(&tetris);
+//		ft_lstdelone(list, (void*)(ft_strlen((*list)->content)));
 		free(*list);
 		*list = next;
 	}
@@ -34,7 +36,7 @@ void	free_list(t_list **list)
 ** Can be use for freeing a tetrimino structure
 */
 
-void		free_tetris(t_etris **tetri)
+void			free_tetris(t_etris **tetri)
 {
 	int y;
 
@@ -55,7 +57,7 @@ void		free_tetris(t_etris **tetri)
 ** Use this fonction to create a new tetriminos structure
 */
 
-t_etris		*tetris_new(char **pos, int width, int height, char value)
+t_etris			*tetris_new(char **pos, int width, int height, char value)
 {
 	t_etris		*tetris;
 
@@ -63,8 +65,7 @@ t_etris		*tetris_new(char **pos, int width, int height, char value)
 	tetris->pos = pos;
 	tetris->value = value;
 	tetris->height = height;
-	tetris-> width = width;
-	
+	tetris->width = width;
 	return (tetris);
 }
 
@@ -72,7 +73,7 @@ t_etris		*tetris_new(char **pos, int width, int height, char value)
 ** Use this fonction to create a new point structure
 */
 
-t_point		*point_new(int x,int y)
+t_point			*point_new(int x, int y)
 {
 	t_point		*point;
 

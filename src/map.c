@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/04/29 17:05:55 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/10 17:52:36 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_map(t_map *map)
 	int i;
 
 	i = 0;
-	while(i < map->size)
+	while (i < map->size)
 	{
 		ft_putstr(map->array[i]);
 		ft_putchar('\n');

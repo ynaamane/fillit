@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/09 20:13:41 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/10 17:18:45 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Utility function to get min-max values for get_piece.
 */
 
-void	min_max(char *str, t_point *min, t_point *max)
+void		min_max(char *str, t_point *min, t_point *max)
 {
 	int i;
 
@@ -38,12 +38,11 @@ void	min_max(char *str, t_point *min, t_point *max)
 	}
 }
 
-
 /*
 ** Check if the chunk is valid, and allocates a structure to polulates it.
 */
 
-t_etris	*get_piece(char *str, char value)
+t_etris		*get_piece(char *str, char value)
 {
 	t_point		*mi;
 	t_point		*max;
@@ -73,7 +72,7 @@ t_etris	*get_piece(char *str, char value)
 ** valid. Otherwise, our tetrimino is not contiguous.
 */
 
-int		check_connection(char *str)
+int			check_connection(char *str)
 {
 	int block;
 	int i;
@@ -102,7 +101,7 @@ int		check_connection(char *str)
 ** Checks character counts and that chunk format is valid.
 */
 
-int		check_counts(char *str, int count)
+int			check_counts(char *str, int count)
 {
 	int i;
 	int blocs;
@@ -135,7 +134,7 @@ int		check_counts(char *str, int count)
 ** 4 lines made of 4 chars (+ newline) = 20 chars + sep. newline = 21 chars
 */
 
-t_list	*read_tetri(int fd)
+t_list		*read_tetri(int fd)
 {
 	char	*buf;
 	int		count;

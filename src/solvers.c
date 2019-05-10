@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 11:25:21 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/09 16:25:25 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/10 18:09:13 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ int		high_sqrt(int n)
 ** Tries to solve maps starting from the smallest possible size.
 */
 
-t_map	*solve(t_list *list)
+t_map	*solve(t_list **list)
 {
 	t_map	*map;
 	int		size;
 
-	size = high_sqrt(ft_lstcount(list) * 4);
+	size = high_sqrt(ft_lstcount(*list) * 4);
 	map = map_new(size);
-	while (!solve_map(map, list))
+	while (!solve_map(map, *list))
 	{
 		size++;
 		free_map(&map);
