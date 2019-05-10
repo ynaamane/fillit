@@ -58,7 +58,7 @@ clean:
 	@rm -rf $(LIB_DIR)/*.o
 	@echo "\033[31mLibft binary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.a
-	@echo "\033[31mLibft.a as been deleted\033[0m"
+	@echo "\033[31mLibft.a as been deleted.\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
