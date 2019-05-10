@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/10 17:52:36 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/10 19:47:12 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int		place(t_etris *tetri, t_map *map, int x, int y)
 		}
 		i++;
 	}
-	set_piece(tetri, map, point_new(x, y), tetri->value);
+	set_piece(tetri, &map, point_new(x, y), tetri->value);
 	return (1);
 }
 
@@ -107,7 +107,7 @@ int		place(t_etris *tetri, t_map *map, int x, int y)
 ** To place, call with c=tetri->value. To remove, call with c='.'.
 */
 
-void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
+void	set_piece(t_etris *tetri, t_map **map, t_point *point, char c)
 {
 	int i;
 	int j;
@@ -119,7 +119,7 @@ void	set_piece(t_etris *tetri, t_map *map, t_point *point, char c)
 		while (j < tetri->height)
 		{
 			if (tetri->pos[j][i] == '#')
-				map->array[point->y + j][point->x + i] = c;
+				(*map)->array[point->y + j][point->x + i] = c;
 			j++;
 		}
 		i++;

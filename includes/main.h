@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 16:18:19 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/10 17:56:03 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/10 19:47:16 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ typedef struct s_etris
 t_list			*read_tetri(int fd);
 void			print_map(t_map *map);
 void			free_map(t_map **map);
-int				solve_map(t_map *map, t_list *list);
+int				solve_map(t_map **map, t_list **list);
 int				high_sqrt(int n);
 void			min_max(char *str, t_point *min, t_point *max);
 void			free_tetris(t_etris **tetri);
 t_etris			*tetris_new(char **pos, int width, int height, char value);
 void			free_list(t_list **list);
 void			ft_lstrev(t_list **alst);
-void			set_piece(t_etris *tetri, t_map *map, t_point *point, char c);
+void			set_piece(t_etris *tetri, t_map **map, t_point *point, char c);
 t_map			*solve(t_list **list);
 t_point			*point_new(int x, int y);
 t_etris			*tetris_new(char **pos, int width, int height, char c);
