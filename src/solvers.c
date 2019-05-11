@@ -30,8 +30,11 @@ int		solve_map(t_map **map, t_list **list)
 	}
 	y = 0;
 	ft_putendl("BEFORE TETRI=...");
-	if ((*list)->content)							// <- Condition ajouter pour le debbug ne'empeche pas le seg
+	if ((*list)->content)		// <- Condition ajouter pour le debbug n'empeche pas le seg
+	{
 		tetri = (t_etris *)((*list)->content);				// <- Cause pricipal du seg
+		ft_putendl("tetri = (t_etris *)((*list)->content)");
+	}
 	ft_putendl("AFTER TETRI=...");
 	while (y < (*map)->size - tetri->height + 1)
 	{
@@ -43,13 +46,16 @@ int		solve_map(t_map **map, t_list **list)
 			if (place(tetri, *map, x, y))
 			{
 				ft_putendl("IF PLACE TETRI");
-				if (solve_map(map, &(*list)->next))		// <- Cause potentiel (si premiere cause commenter)
+				if (solve_map(map, &(*list)->next))		// <- Cause secondaire (si premiere cause commenter)
 				{
 					ft_putendl("if (solve_map(map, &(*list)->next)) return (1)");
 					return (1);
 				}
 				else
+				{
+					ft_putendl("ELSE IN IF PLACE TETRI");
 					set_piece(tetri, map, point_new(x, y), '.');
+				}
 			}
 			x++;
 			ft_putendl("X++");
@@ -86,7 +92,7 @@ t_map	*solve(t_list **list)
 	ft_putendl("ENTER SOLVE");
 	size = high_sqrt(ft_lstcount(*list) * 4);
 	map = map_new(size);
-	while (!solve_map(&map, list))
+	while (!solve_map(&map, &(*list)))
 	{
 		ft_putendl("ENTER IN WHILE");
 		size++;
