@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/10 19:47:12 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/13 00:05:18 by pemora           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	free_map(t_map **map)
 		ft_strdel(&(*map)->array[i]);
 		i++;
 	}
-	ft_memdel((void**)(*map)->array);
+	free((*map)->array);
 	free(*map);
 	*map = NULL;
 }

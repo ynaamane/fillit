@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/10 17:47:18 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/13 00:03:33 by pemora           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,12 @@
 
 void			free_list(t_list **list)
 {
-	t_etris		*tetris;
-	t_list		*next;
+	t_list	*next;
 
 	while (*list)
 	{
-		tetris = (t_etris *)(*list)->content;
 		next = (*list)->next;
-		free_tetris(&tetris);
-//		ft_lstdelone(list, (void*)(ft_strlen((*list)->content)));
+		free_tetris((t_etris**)&(*list)->content);
 		free(*list);
 		*list = next;
 	}
@@ -41,16 +38,13 @@ void			free_tetris(t_etris **tetri)
 	int y;
 
 	y = 0;
-	if (!(tetri))
+	while (y < (*tetri)->height)
 	{
-		while (y < (*tetri)->height)
-		{
-			ft_strdel(&(*tetri)->pos[y]);
-			y++;
-		}
-		ft_memdel((void **)((*tetri)->pos));
-		ft_memdel((void **)(*tetri));
+		ft_strdel(&(*tetri)->pos[y]);
+		y++;
 	}
+	free((*tetri)->pos);
+	free(*tetri);
 }
 
 /*
