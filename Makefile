@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/14 19:31:29 by sebbaill         ###   ########.fr        #
+#    Updated: 2019/05/14 19:36:58 by sebbaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,7 @@ all: lib $(NAME)
 
 lib:
 	@$(MAKE) -C libft/ libft.a --no-print-directory
-	@echo "\033[32mLibft compiled.\033[0m"
-	@echo "\n"
+	@echo "\033[32mLibft compiled.\n\033[0m"
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -55,7 +54,7 @@ $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 $(NAME): lib $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIB_LNK) -o $(NAME)
 	@printf "$(UP)$(CUT)"
-	@echo "\033[32mCompiled $@.\033[0m"
+	@echo "\033[32mFillit compiled.\033[0m"
 
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -63,7 +62,7 @@ clean:
 	@rm -rf $(LIB_DIR)/*.o
 	@echo "\033[31mLibft binary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.a
-	@echo "\033[31mLibft.a as been deleted.\033[0m"
+	@echo "\033[31mLibft deleted.\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
