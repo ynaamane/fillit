@@ -6,18 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/12 23:58:27 by pemora           ###   ########.fr       */
+/*   Updated: 2019/05/14 17:03:17 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/main.h"
-
-// int				print_error(char *err, int n)
-// {
-// 	ft_putstr(err);
-// 	ft_putstr("\n");
-// 	return (n);
-// }
 
 int		main(int argc, char **argv)
 {

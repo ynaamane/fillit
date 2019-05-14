@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/09 19:47:19 by sebbaill         ###   ########.fr        #
+#    Updated: 2019/05/14 17:58:13 by sebbaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,33 +24,43 @@ SRC		:= 	main.c \
 			solvers.c \
 			map.c \
 			tetriminos.c \
-			patterns.c \
 			ft_lstcount.c \
 			ft_lstrev.c
 OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # compiler and flags
 CC		:=	gcc
-CFLAGS	:=	-g -o0 -Wall -Wextra -Werror
+CFLAGS	:=	-Wall -Wextra -Werror
 
 # libraries
 L_FT	:= $(LIB_DIR)
 include $(L_FT)/libft.mk
 
+BLUE = \033[36m
+UP = \033[A
+CUT = \033[K
+
 .PHONY: all clean fclean re
 
-all:
-		mkdir -p $(OBJ_DIR)
-		@$(MAKE) -C $(L_FT) --no-print-directory
-		@$(MAKE) $(NAME) --no-print-directory
+all: lib $(NAME)
+
+
+lib:
+	@$(MAKE) -C libft/ libft.a --no-print-directory
+#	@echo "\n"
+#	@$(MAKE) $(NAME) --no-print-directory
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(LIB_INC) -I $(INC_DIR) -o $@ -c $<
-	@echo "\033[32mCompiled all 'libft' .c type files.\033[0m"
+	@mkdir -p $(OBJ_DIR)
+#	$(CC) $(CFLAGS) $(LIB_INC) -I $(INC_DIR) -o $@ -c $<
+#	@echo "\033[32mAdd $@ to $(OBJ_DIR)\033[0m"
+	@echo "${BLUE}compiling [$@] ...${END}"
+	@$(CC) $(CFLAGS) -o $@ -c $< -I.
+	@printf "$(UP)$(CUT)"
 
-$(NAME): $(OBJ)
+$(NAME): lib $(OBJ)
 	$(CC) $(OFLAGS) $(OBJ) $(LIB_LNK) -o $(NAME)
-	@echo "\033[32mCompiled all 'fillit' .c type files.\033[0m"
+	@echo "\033[32mCompiled 'fillit'.\033[0m"
 
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -64,12 +74,7 @@ fclean: clean
 	@rm -rf $(NAME)
 	@echo "\033[31mMain executable file deleted.\033[0m"
 
-re:
-	@$(MAKE) fclean --no-print-directory
-	@$(MAKE) all --no-print-directory
+re: fclean all
+#	@$(MAKE) fclean --no-print-directory
+#	@$(MAKE) all --no-print-directory
 
-relibs:
-	@$(MAKE) -C $(L_FT) re --no-print-directory
-	@echo "\033[32mCecompiled all 'libft' .c type files.\033[0m"
-	@$(MAKE) re --no-print-directory
-	@echo "\033[32mRecompiled all 'fillit' .c type files.\033[0m"
