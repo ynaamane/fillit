@@ -6,11 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 11:25:21 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/12 23:57:36 by pemora           ###   ########.fr       */
+/*   Updated: 2019/05/14 18:10:42 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/main.h"
+#include "../includes/fillit.h"
 
 /*
 ** Backtracking implementation of the solver.

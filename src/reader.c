@@ -6,11 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/12 23:53:55 by pemora           ###   ########.fr       */
+/*   Updated: 2019/05/14 18:10:20 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/main.h"
+#include "../includes/fillit.h"
 
 /*
 ** Utility function to get min-max values for get_piece.

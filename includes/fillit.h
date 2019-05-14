@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 16:18:19 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 17:09:15 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/14 18:06:32 by sebbaill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ typedef struct	s_board
 {
 	int			size;
 	t_point		*p;
-}					t_board;
+}				t_board;
 
-typedef struct s_etris
+typedef struct	s_etris
 {
 	char		**pos;
 	int			width;
