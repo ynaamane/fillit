@@ -6,19 +6,17 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/14 17:58:13 by sebbaill         ###   ########.fr        #
+#    Updated: 2019/05/14 19:31:29 by sebbaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := fillit
 
-# directories
 SRC_DIR := ./src
 INC_DIR := ./includes
 OBJ_DIR := ./obj
 LIB_DIR := ./libft
 
-# src / obj files
 SRC		:= 	main.c \
 			reader.c \
 			solvers.c \
@@ -26,13 +24,11 @@ SRC		:= 	main.c \
 			tetriminos.c \
 			ft_lstcount.c \
 			ft_lstrev.c
-OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
-# compiler and flags
+OBJ		:=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 CC		:=	gcc
 CFLAGS	:=	-Wall -Wextra -Werror
 
-# libraries
 L_FT	:= $(LIB_DIR)
 include $(L_FT)/libft.mk
 
@@ -47,20 +43,19 @@ all: lib $(NAME)
 
 lib:
 	@$(MAKE) -C libft/ libft.a --no-print-directory
-#	@echo "\n"
-#	@$(MAKE) $(NAME) --no-print-directory
+	@echo "\033[32mLibft compiled.\033[0m"
+	@echo "\n"
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-#	$(CC) $(CFLAGS) $(LIB_INC) -I $(INC_DIR) -o $@ -c $<
-#	@echo "\033[32mAdd $@ to $(OBJ_DIR)\033[0m"
-	@echo "${BLUE}compiling [$@] ...${END}"
+	@echo "${BLUE}compiling $(NAME): [$@] ...${END}"
 	@$(CC) $(CFLAGS) -o $@ -c $< -I.
 	@printf "$(UP)$(CUT)"
 
 $(NAME): lib $(OBJ)
-	$(CC) $(OFLAGS) $(OBJ) $(LIB_LNK) -o $(NAME)
-	@echo "\033[32mCompiled 'fillit'.\033[0m"
+	@$(CC) $(CFLAGS) $(OBJ) $(LIB_LNK) -o $(NAME)
+	@printf "$(UP)$(CUT)"
+	@echo "\033[32mCompiled $@.\033[0m"
 
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -75,6 +70,3 @@ fclean: clean
 	@echo "\033[31mMain executable file deleted.\033[0m"
 
 re: fclean all
-#	@$(MAKE) fclean --no-print-directory
-#	@$(MAKE) all --no-print-directory
-
