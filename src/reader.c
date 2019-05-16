@@ -6,11 +6,13 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 18:10:20 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/16 12:30:53 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+
+int g_last = 0;
 
 /*
 ** Utility function to get min-max values for get_piece.
@@ -123,6 +125,7 @@ int			check_counts(char *str, int count)
 	}
 	if (count == 21 && str[20] != '\n')
 		return (4);
+	count == 20 ? g_last = 1 : 0;
 	if (!check_connection(str))
 		return (5);
 	return (0);
@@ -155,9 +158,10 @@ t_list		*read_tetri(int fd)
 		}
 		ft_lstadd(&list, ft_lstnew(tetris, sizeof(t_etris)));
 		ft_memdel((void **)&tetris);
+		ft_bzero(buf, 22);
 	}
 	ft_memdel((void **)&buf);
-	if (count != 0)
+	if (count != 0 || !g_last)
 		free_list(&list);
 	ft_lstrev(&list);
 	return (list);
