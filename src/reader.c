@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/16 12:30:53 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/16 17:58:05 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,6 @@ t_list		*read_tetri(int fd)
 		}
 		ft_lstadd(&list, ft_lstnew(tetris, sizeof(t_etris)));
 		ft_memdel((void **)&tetris);
-		ft_bzero(buf, 22);
 	}
 	ft_memdel((void **)&buf);
 	if (count != 0 || !g_last)
