@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/17 15:32:11 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/05/17 15:34:07 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,30 +43,29 @@ all: lib $(NAME)
 
 lib:
 	@$(MAKE) -C libft/ libft.a --no-print-directory
-	@$(ECHO) "\033[32mLibft compiled.\n\033[0m"
+	@echo "\033[32mLibft compiled.\n\033[0m"
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	@$(ECHO) "${BLUE}compiling $(NAME): [$@] ...${END}"
+	@echo "${BLUE}compiling $(NAME): [$@] ...${END}"
 	@$(CC) $(CFLAGS) -o $@ -c $< -I.
 	@printf "$(UP)$(CUT)"
 
 $(NAME): lib $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIB_LNK) -o $(NAME)
 	@printf "$(UP)$(CUT)"
-	@$(ECHO) "\033[32mFillit compiled.\033[0m"
+	@echo "\033[32mFillit compiled.\033[0m"
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@$(ECHO) "\033[31mBinary files deleted.\033[0m"
+	@echo "\033[31mBinary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.o
-	@$(ECHO) "\033[31mLibft binary files deleted.\033[0m"
+	@echo "\033[31mLibft binary files deleted.\033[0m"
 	@rm -rf $(LIB_DIR)/*.a
-	@$(ECHO) "\033[31mLibft deleted.\033[0m"
+	@echo "\033[31mLibft deleted.\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@$(ECHO) "\033[31mMain executable file deleted.\033[0m"
+	@echo "\033[31mMain executable file deleted.\033[0m"
 
 re: fclean all
-endif
