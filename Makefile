@@ -6,7 +6,7 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/17 15:34:07 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/05/17 15:41:21 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: lib $(NAME)
 
 
 lib:
-	@$(MAKE) -C libft/ libft.a --no-print-directory
+	@$(MAKE) -C $(LIB_DIR)/ $(FT_NAME) --no-print-directory
 	@echo "\033[32mLibft compiled.\n\033[0m"
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
