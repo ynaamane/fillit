@@ -6,24 +6,9 @@
 #    By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/11 15:22:52 by ynaamane          #+#    #+#              #
-#    Updated: 2019/05/16 16:20:47 by ynaamane         ###   ########.fr        #
+#    Updated: 2019/05/17 15:32:11 by ynaamane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-ifneq ($(words $(MAKECMDGOALS)),1)
-.DEFAULT_GOAL = all
-%:
-		@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
-else
-ifndef ECHO
-T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
-		-nrRf $(firstword $(MAKEFILE_LIST)) \
-		ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
-
-N := x
-C = $(words $N)$(eval N := x $N)
-ECHO = echo "`expr " [\`expr $C '*' 100 / $T\`" : '.*\(....\)$$'`%]"
-endif
 
 NAME := fillit
 
