@@ -6,15 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/09 11:25:21 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 18:10:42 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:38:36 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-
-/*
-** Backtracking implementation of the solver.
-*/
 
 int		solve_map(t_map **map, t_list **list)
 {
@@ -45,10 +41,6 @@ int		solve_map(t_map **map, t_list **list)
 	return (0);
 }
 
-/*
-** Gets the rounded up sqrt of a number. Equivalent to ceil(sqrt(n)).
-*/
-
 int		high_sqrt(int n)
 {
 	int size;
@@ -58,10 +50,6 @@ int		high_sqrt(int n)
 		size++;
 	return (size);
 }
-
-/*
-** Tries to solve maps starting from the smallest possible size.
-*/
 
 t_map	*solve(t_list *list)
 {

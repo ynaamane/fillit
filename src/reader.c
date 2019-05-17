@@ -6,17 +6,13 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 11:07:50 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/16 17:58:05 by ynaamane         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:38:15 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
 int g_last = 0;
-
-/*
-** Utility function to get min-max values for get_piece.
-*/
 
 void		min_max(char *str, t_point *min, t_point *max)
 {
@@ -39,10 +35,6 @@ void		min_max(char *str, t_point *min, t_point *max)
 		i++;
 	}
 }
-
-/*
-** Check if the chunk is valid, and allocates a structure to polulates it.
-*/
 
 t_etris		*get_piece(char *str, char value)
 {
@@ -69,11 +61,6 @@ t_etris		*get_piece(char *str, char value)
 	return (tetri);
 }
 
-/*
-** Checks connection counts, if we have 6 or 8 connections, the tetrimino is
-** valid. Otherwise, our tetrimino is not contiguous.
-*/
-
 int			check_connection(char *str)
 {
 	int block;
@@ -98,10 +85,6 @@ int			check_connection(char *str)
 	}
 	return (block == 6 || block == 8);
 }
-
-/*
-** Checks character counts and that chunk format is valid.
-*/
 
 int			check_counts(char *str, int count)
 {
@@ -130,12 +113,6 @@ int			check_counts(char *str, int count)
 		return (5);
 	return (0);
 }
-
-/*
-** Read tetriminos from fd and put them in a list.
-** We use 21 sized reads to read piece by piece since there are
-** 4 lines made of 4 chars (+ newline) = 20 chars + sep. newline = 21 chars
-*/
 
 t_list		*read_tetri(int fd)
 {

@@ -6,15 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 15:17:24 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 18:11:10 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:37:08 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-
-/*
-** Free an alocated map structure
-*/
 
 void	free_map(t_map **map)
 {
@@ -31,10 +27,6 @@ void	free_map(t_map **map)
 	*map = NULL;
 }
 
-/*
-** Prints aleady allowed map to the standar outpout
-*/
-
 void	print_map(t_map *map)
 {
 	int i;
@@ -47,10 +39,6 @@ void	print_map(t_map *map)
 		i++;
 	}
 }
-
-/*
-** Allocates a new map structure with a given size
-*/
 
 t_map	*map_new(int size)
 {
@@ -76,11 +64,6 @@ t_map	*map_new(int size)
 	return (map);
 }
 
-/*
-** This function allow you to place a tetriminos with a specified adress.
-** Also checking of the placement is possible.
-*/
-
 int		place(t_etris *tetri, t_map *map, int x, int y)
 {
 	int i;
@@ -101,11 +84,6 @@ int		place(t_etris *tetri, t_map *map, int x, int y)
 	set_piece(tetri, &map, point_new(x, y), tetri->value);
 	return (1);
 }
-
-/*
-** Sets a tetrimino on a map at a position with the specified character.
-** To place, call with c=tetri->value. To remove, call with c='.'.
-*/
 
 void	set_piece(t_etris *tetri, t_map **map, t_point *point, char c)
 {

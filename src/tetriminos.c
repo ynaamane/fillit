@@ -6,15 +6,11 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 12:59:57 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 18:10:56 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/17 14:39:20 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-
-/*
-** Can be use for freeing a list made with read_tetri
-*/
 
 void			free_list(t_list **list)
 {
@@ -28,10 +24,6 @@ void			free_list(t_list **list)
 		*list = next;
 	}
 }
-
-/*
-** Can be use for freeing a tetrimino structure
-*/
 
 void			free_tetris(t_etris **tetri)
 {
@@ -47,10 +39,6 @@ void			free_tetris(t_etris **tetri)
 	free(*tetri);
 }
 
-/*
-** Use this fonction to create a new tetriminos structure
-*/
-
 t_etris			*tetris_new(char **pos, int width, int height, char value)
 {
 	t_etris		*tetris;
@@ -62,10 +50,6 @@ t_etris			*tetris_new(char **pos, int width, int height, char value)
 	tetris->width = width;
 	return (tetris);
 }
-
-/*
-** Use this fonction to create a new point structure
-*/
 
 t_point			*point_new(int x, int y)
 {
