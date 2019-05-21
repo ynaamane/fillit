@@ -6,7 +6,7 @@
 /*   By: ynaamane <ynaamane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 13:58:31 by ynaamane          #+#    #+#             */
-/*   Updated: 2019/05/14 18:09:58 by sebbaill         ###   ########.fr       */
+/*   Updated: 2019/05/21 17:35:45 by ynaamane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int argc, char **argv)
 		ft_putstr("usage: fillit input_file\n");
 		return (1);
 	}
-	if ((list = read_tetri(open(argv[1], O_RDONLY))) == NULL)
+	if ((list = read_tetri(open(argv[1], O_RDONLY), 0)) == NULL)
 	{
 		ft_putstr("error\n");
 		return (1);
