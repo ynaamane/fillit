@@ -6,7 +6,7 @@
 #    By: sebbaill <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/13 18:13:21 by sebbaill          #+#    #+#              #
-#    Updated: 2019/05/14 18:01:53 by sebbaill         ###   ########.fr        #
+#    Updated: 2019/05/10 21:39:45 by sebbaill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 HEADER = libft.h
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SOURCEC = ft_atoi.c \
+SOURCEC =	ft_atoi.c \
 		ft_bzero.c \
 		ft_count_numbers.c \
 		ft_count_words.c \
@@ -31,6 +31,7 @@ SOURCEC = ft_atoi.c \
 		ft_lstmap.c \
 		ft_lstnew.c \
 		ft_lst_del_back.c \
+		ft_lst_del_front.c \
 		ft_lst_push_back.c \
 		ft_lst_push_front.c \
 		ft_print_list.c \
@@ -82,34 +83,36 @@ SOURCEC = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_putendl.c \
-		ft_putendl_fd.c
+		ft_putendl_fd.c \
+		get_next_line.c
 
 BLUE = \033[36m
+RED = \033[31m
 UP = \033[A
 CUT = \033[K
+NUMBER_OF_FILE = 0
+PERCENTAGE = 0
 
 SOURCEO = $(SOURCEC:%.c=%.o)
 
 all: $(NAME)
 
-#$(NAME): $(SOURCEO) $(HEADER)
-#	@$(CC) -c $(CFLAGS) $(SOURCEC) 
-#	@ar rc $(NAME) $(SOURCEO)
-#	@ranlib $(NAME)
-
 %.o: %.c
-		@echo "${BLUE}compiling [$@] ...${END}"
-		@$(CC) $(CFLAGS) -o $@ -c $< -I.
-		@printf "$(UP)$(CUT)"
+	$(eval NUMBER_OF_FILE=$(shell echo $$(($(NUMBER_OF_FILE)+1))))
+	$(eval PERCENTAGE=$(shell echo $(NUMBER_OF_FILE)*100/65 | bc))
+	@echo "${BLUE}compiling $@ [$(PERCENTAGE)%]...${END}"
+	@$(CC) $(CFLAGS) -o $@ -c $< -I.
+	@printf "$(UP)$(CUT)"
 
 $(NAME): $(SOURCEO) $(HEADER)
 	@ar rcs $(NAME) $(SOURCEO)
+	@echo "\033[32mLibft compiled.\033[0m"
 
 clean:
-	rm -rf $(SOURCEO)
+	@rm -rf $(SOURCEO)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
